@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MouseTracker.Infrastructure
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MouseTracker.Web", "..\MouseTracker.Web\MouseTracker.Web.csproj", "{3C7871FA-DB85-4E92-BC03-C07E9D5C0A8C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MouseTracker.Tests", "MouseTracker.Tests\MouseTracker.Tests.csproj", "{90E35FD9-7A4B-48E0-9B96-F04951F2C2E3}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{3C7871FA-DB85-4E92-BC03-C07E9D5C0A8C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3C7871FA-DB85-4E92-BC03-C07E9D5C0A8C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3C7871FA-DB85-4E92-BC03-C07E9D5C0A8C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{90E35FD9-7A4B-48E0-9B96-F04951F2C2E3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{90E35FD9-7A4B-48E0-9B96-F04951F2C2E3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{90E35FD9-7A4B-48E0-9B96-F04951F2C2E3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{90E35FD9-7A4B-48E0-9B96-F04951F2C2E3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

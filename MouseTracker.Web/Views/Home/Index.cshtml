@@ -1,29 +1,92 @@
-﻿<button id="sendBtn">Отправить данные</button>
-
-<script>
-    let mouseData = [];
-
-    document.addEventListener('mousemove', (e) => {
-        mouseData.push({
-            X: e.clientX,
-            Y: e.clientY,
-            T: Date.now()
-        });
-    });
-
-    document.getElementById('sendBtn').addEventListener('click', async () => {
-        try {
-            const response = await fetch('/api/mouse-data', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify(mouseData)
-            });
-            mouseData = []; // Очищаем данные после отправки
-            alert('Данные успешно отправлены!');
-        } catch (error) {
-            console.error('Ошибка:', error);
+﻿<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mouse Tracker</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f9;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            flex-direction: column;
         }
-    });
-</script>
+
+        h1 {
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        #sendBtn {
+            background-color: #4CAF50;
+            color: white;
+            font-size: 16px;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        #sendBtn:hover {
+            background-color: #45a049;
+        }
+
+        #sendBtn:active {
+            background-color: #3e8e41;
+        }
+
+        #message {
+            margin-top: 20px;
+            color: green;
+            font-size: 18px;
+        }
+
+        .container {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Трекер мыши</h1>
+        <button id="sendBtn">Отправить данные</button>
+        <p id="message"></p>
+    </div>
+
+    <script>
+        let mouseData = [];
+
+        document.addEventListener('mousemove', (e) => {
+            mouseData.push({
+                X: e.clientX,
+                Y: e.clientY,
+                T: Date.now()
+            });
+        });
+
+        document.getElementById('sendBtn').addEventListener('click', async () => {
+            try {
+                const response = await fetch('/api/mouse-data', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(mouseData)
+                });
+                mouseData = []; // Очищаем данные после отправки
+                document.getElementById('message').innerText = 'Данные успешно отправлены!';
+            } catch (error) {
+                console.error('Ошибка:', error);
+                document.getElementById('message').innerText = 'Ошибка при отправке данных';
+                document.getElementById('message').style.color = 'red';
+            }
+        });
+    </script>
+</body>
+</html>
