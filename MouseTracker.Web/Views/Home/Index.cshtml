@@ -1,0 +1,29 @@
+﻿<button id="sendBtn">Отправить данные</button>
+
+<script>
+    let mouseData = [];
+
+    document.addEventListener('mousemove', (e) => {
+        mouseData.push({
+            X: e.clientX,
+            Y: e.clientY,
+            T: Date.now()
+        });
+    });
+
+    document.getElementById('sendBtn').addEventListener('click', async () => {
+        try {
+            const response = await fetch('/api/mouse-data', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(mouseData)
+            });
+            mouseData = []; // Очищаем данные после отправки
+            alert('Данные успешно отправлены!');
+        } catch (error) {
+            console.error('Ошибка:', error);
+        }
+    });
+</script>
