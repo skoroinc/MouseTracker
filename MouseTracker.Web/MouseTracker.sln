@@ -9,9 +9,9 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MouseTracker.Application", 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MouseTracker.Infrastructure", "..\MouseTracker.Infrastructure\MouseTracker.Infrastructure.csproj", "{64911B9C-0F2D-42FA-BA8E-2D03ACA73253}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MouseTracker.Web", "..\MouseTracker.Web\MouseTracker.Web.csproj", "{3C7871FA-DB85-4E92-BC03-C07E9D5C0A8C}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MouseTracker.Web", "MouseTracker.Web.csproj", "{3C7871FA-DB85-4E92-BC03-C07E9D5C0A8C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MouseTracker.Tests", "MouseTracker.Tests\MouseTracker.Tests.csproj", "{90E35FD9-7A4B-48E0-9B96-F04951F2C2E3}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MouseTracker.Tests", "..\MouseTracker.Tests\MouseTracker.Tests.csproj", "{34F6DC36-108D-4C2D-B127-D0761D3A5649}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -35,10 +35,10 @@ Global
 		{3C7871FA-DB85-4E92-BC03-C07E9D5C0A8C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3C7871FA-DB85-4E92-BC03-C07E9D5C0A8C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3C7871FA-DB85-4E92-BC03-C07E9D5C0A8C}.Release|Any CPU.Build.0 = Release|Any CPU
-		{90E35FD9-7A4B-48E0-9B96-F04951F2C2E3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{90E35FD9-7A4B-48E0-9B96-F04951F2C2E3}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{90E35FD9-7A4B-48E0-9B96-F04951F2C2E3}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{90E35FD9-7A4B-48E0-9B96-F04951F2C2E3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{34F6DC36-108D-4C2D-B127-D0761D3A5649}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{34F6DC36-108D-4C2D-B127-D0761D3A5649}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{34F6DC36-108D-4C2D-B127-D0761D3A5649}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{34F6DC36-108D-4C2D-B127-D0761D3A5649}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

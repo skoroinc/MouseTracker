@@ -1,8 +1,5 @@
 ﻿using Moq;
-using Xunit;
 using System.Text.Json;
-using System.Threading.Tasks;
-using System.Collections.Generic;
 using MouseTracker.Application.DTOs;
 using MouseTracker.Application.Services;
 using MouseTracker.Domain.Entities;
@@ -20,10 +17,10 @@ namespace MouseTracker.Tests
             var mockRepo = new Mock<IRepository<MouseMovement>>();
             var service = new MouseService(mockRepo.Object);
 
-            
+
             var coordinates = new List<CoordinateDto>
         {
-            new(10, 20, 0), 
+            new(10, 20, 0),
             new(30, 40, 0)
         };
 
@@ -41,13 +38,13 @@ namespace MouseTracker.Tests
             Assert.Equal(10, deserializedData[0].X);
             Assert.Equal(20, deserializedData[0].Y);
 
-            
-            var expectedTime = 0; 
-            Assert.InRange(deserializedData[0].T, expectedTime - 1000, expectedTime + 1000); 
+
+            var expectedTime = 0;
+            Assert.InRange(deserializedData[0].T, expectedTime - 1000, expectedTime + 1000);
 
             Assert.Equal(30, deserializedData[1].X);
             Assert.Equal(40, deserializedData[1].Y);
-            Assert.InRange(deserializedData[1].T, expectedTime - 1000, expectedTime + 1000);  
+            Assert.InRange(deserializedData[1].T, expectedTime - 1000, expectedTime + 1000);
 
             mockRepo.Verify(repo => repo.AddAsync(It.IsAny<MouseMovement>()), Times.Once);
         }
